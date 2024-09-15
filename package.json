@@ -1,14 +1,16 @@
 {
-  "name": "chrome-webstore-review-scraper",
+  "name": "chrome-webstore-review-summarizer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "type": "module",
+  "description": "chrome webstore review summarizer",
+  "scripts": {
+    "start": "node --experimental-strip-types src/index.ts"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.47.1",
-    "@types/node": "^22.5.5"
+    "@playwright/test": "1.47.1",
+    "@types/node": "22.5.5"
   }
 }
