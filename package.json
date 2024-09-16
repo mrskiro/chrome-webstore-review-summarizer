@@ -4,13 +4,19 @@
   "type": "module",
   "description": "chrome webstore review summarizer",
   "scripts": {
-    "start": "node --experimental-strip-types src/index.ts"
+    "start": "node --experimental-strip-types --no-warnings=ExperimentalWarning src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "mrskiro",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "1.47.1",
     "@types/node": "22.5.5"
+  },
+  "engines": {
+    "node": ">=22.8.0"
+  },
+  "dependencies": {
+    "openai": "4.61.0"
   }
 }
