@@ -149,8 +149,9 @@ You are provided with a dataset of browser extension reviews. Conduct a detailed
     [
       "Name,Rate,Date,Content",
       ...data.map((v) => {
+        const name = `"${v.name.replace(/"/g, '""')}"`;
         const content = `"${v.content.replace(/"/g, '""')}"`;
-        return `${v.name},${v.rate},${v.createdAt},${content}`;
+        return `${name},${v.rate},${v.createdAt},${content}`;
       }),
     ].join("\n"),
     "utf8"
@@ -205,6 +206,7 @@ You are provided with a dataset of browser extension reviews. Conduct a detailed
       console.log("Report generated");
     }
     await client.beta.assistants.del(assistant.id);
+    await client.files.del(fileObject.id);
   }
 
   console.log(`Done. reviews: ${data.length}`);
